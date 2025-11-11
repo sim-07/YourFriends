@@ -38,6 +38,7 @@ export default function App() {
   return (
     <>
       <CardNav
+        //style={{ maxWidth: "100vw" }}
         logo={logo}
         logoAlt="Company Logo"
         items={items}
