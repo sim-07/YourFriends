@@ -52,37 +52,36 @@ const HeroSection = () => {
                 </div>
             </div>
 
-            <div className='w-[100vw] flex justify-center items-center'>
+            <div className="w-[100vw] flex justify-center items-center">
                 {/* Container delle card */}
-                <div className="flex flex-col lg:flex-row justify-center items-center gap-6 w-full mt-6 px-4">
-                    {cards.map((card) => {
-                        return (
-                            <AnimatedContent
-                                distance={150}
-                                direction="vertical"
-                                reverse={false}
-                                duration={1.2}
-                                ease="expo.out"
-                                initialOpacity={0.2}
-                                animateOpacity
-                                scale={1.02}
-                                threshold={0.2}
-                                delay={0.2}
+                <div className="flex flex-col min-[890px]:flex-row justify-center items-stretch gap-6 max-[920px]:gap-2 mt-6 px-4 max-w-[1200px]">
+                    {cards.map((card, index) => (
+                        <AnimatedContent
+                            key={index}
+                            distance={150}
+                            direction="vertical"
+                            reverse={false}
+                            duration={1.2}
+                            ease="expo.out"
+                            initialOpacity={0.2}
+                            animateOpacity
+                            scale={1.02}
+                            threshold={0.2}
+                            delay={0.2 + index * 0.2}
+                        >
+                            <SpotlightCard
+                                className="flex-1 min-w-[280px] max-w-[380px] h-[480px] group"
+                                spotlightColor="rgba(82, 39, 255, 0.18)"
                             >
-                                <SpotlightCard className="w-[380px] h-[480px] group" spotlightColor="rgba(82, 39, 255, 0.18)">
-                                    <div className="flex flex-col h-full p-8 rounded-2xl transition-transform transform group-hover:scale-[1.03]">
-                                        <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                                            {card.title}
-                                        </h3>
-                                        <p className="text-gray-300 text-base leading-relaxed">
-                                            {card.descr}
-                                        </p>
-                                    </div>
-                                </SpotlightCard>
-                            </AnimatedContent>
-                        )
-                    })}
-                    
+                                <div className="flex flex-col h-full p-7 lg:p-8 md:p-7 rounded-2xl transition-transform transform group-hover:scale-[1.03]">
+                                    <h3 className="text-3xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                                        {card.title}
+                                    </h3>
+                                    <p className="text-gray-300 text-base leading-relaxed">{card.descr}</p>
+                                </div>
+                            </SpotlightCard>
+                        </AnimatedContent>
+                    ))}
                 </div>
             </div>
 
