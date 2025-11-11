@@ -7,7 +7,7 @@ const HeroSection = () => {
     const cards = [
         {
             title: "Iscriviti",
-            descr: "È facile e gratuito. Fornisci solo le informazioni essenziali per ricevere e inviare i messaggi \"Come Stai?\". L'installazione dell'app è opzionale.",
+            descr: "È facile e gratuito. Fornisci solo le informazioni essenziali per ricevere e inviare i messaggi \"Come Stai?\"",
         },
         {
             title: "Scegli i tuoi Friends",
