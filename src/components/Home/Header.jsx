@@ -6,31 +6,31 @@ import logo from '../../assets/react.svg';
 export default function App() {
   const items = [
     {
-      label: "About",
+      label: "Su di noi",
       bgColor: "#0D0716",
       textColor: "#fff",
       links: [
-        { label: "Company", ariaLabel: "About Company" },
-        { label: "Careers", ariaLabel: "About Careers" }
+        { label: "Contattaci", ariaLabel: "Contattaci" },
+        { label: "Scopri la guida di YourFriends", ariaLabel: "About Careers" }
       ]
     },
     {
-      label: "Projects",
+      label: "Scopri di più",
       bgColor: "#170D27",
       textColor: "#fff",
       links: [
-        { label: "Featured", ariaLabel: "Featured Projects" },
-        { label: "Case Studies", ariaLabel: "Project Case Studies" }
+        { label: "Come si usa YourFriends?", ariaLabel: "Featured Projects" },
+        { label: "Per chi è pensato YourFriends?", ariaLabel: "Project Case Studies" }
       ]
     },
     {
-      label: "Contact",
+      label: "Area Personale",
       bgColor: "#271E37",
       textColor: "#fff",
       links: [
-        { label: "Email", ariaLabel: "Email us" },
-        { label: "Twitter", ariaLabel: "Twitter" },
-        { label: "LinkedIn", ariaLabel: "LinkedIn" }
+        { label: "Accedi", ariaLabel: "Email us" },
+        { label: "Registrati", ariaLabel: "Twitter" },
+        { label: "Che dati raccogliamo?", ariaLabel: "LinkedIn" }
       ]
     }
   ];
