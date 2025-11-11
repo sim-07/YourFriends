@@ -1,7 +1,7 @@
 import React from 'react';
 import CardNav from '../CardNav';
 import HeroSection from './HeroSection.jsx';
-import logo from '../../assets/react.svg';
+import logo from '../../assets/logo.svg';
 
 export default function App() {
   const items = [

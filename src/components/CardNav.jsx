@@ -150,7 +150,7 @@ const CardNav = ({
           </div>
 
           <div className="logo-container">
-            <img src={logo} alt={logoAlt} className="logo" />
+            <img src={logo} class="h-8 me-3" alt="YourFriends Logo" />
           </div>
 
           <button

@@ -1,12 +1,14 @@
 import Header from '../components/Home/Header.jsx';
-import MiddleSection from '../components/Home/MiddleSection.jsx';
-
+import Footer from '../components/Home/Footer.jsx';
 
 export default function Home() {
     return (
         <div>
             <Header />
-            <MiddleSection />
+            <main>
+                
+            </main>
+            <Footer />
         </div>
     );
 }
