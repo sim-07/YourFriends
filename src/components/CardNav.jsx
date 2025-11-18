@@ -152,13 +152,16 @@ const CardNav = ({
           <div className="logo-container">
             <img src={logo} class="h-8 me-3" alt="YourFriends Logo" />
           </div>
+          
 
           <button
             type="button"
             className="card-nav-cta-button"
             style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
           >
+
             Accedi/Registrati
+
           </button>
         </div>
 

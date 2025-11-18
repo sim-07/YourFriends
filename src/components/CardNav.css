@@ -158,6 +158,8 @@
   opacity: 0.75;
 }
 
+.glass-nav { background: rgba(255,255,255,0.25); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(100px); border-radius: 9px}
+
 @media (max-width: 768px) {
   .card-nav-container {
     width: 90%;

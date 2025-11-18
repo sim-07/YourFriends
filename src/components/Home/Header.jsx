@@ -15,7 +15,7 @@ export default function App() {
       ]
     },
     {
-      label: "Scopri die più",
+      label: "Scopri di più",
       bgColor: "#170D27",
       textColor: "#fff",
       links: [
@@ -42,11 +42,13 @@ export default function App() {
         logo={logo}
         logoAlt="Company Logo"
         items={items}
-        baseColor="#fff"
+        baseColor="transparent"
         menuColor="#000"
-        buttonBgColor="#111"
+        buttonBgColor="#5227ff"
         buttonTextColor="#fff"
         ease="power3.out"
+        className="glass-nav"
+        
       />
 
       <HeroSection />
