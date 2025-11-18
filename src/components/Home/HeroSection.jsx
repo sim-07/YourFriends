@@ -11,7 +11,7 @@ const HeroSection = () => {
                 <div className="max-w-4xl bg-white/25 backdrop-blur-xl rounded-xl p-8 border border-white/20">                    
                     <div className="flex items-center justify-center gap-4 mb-10 flex-wrap">
                         <span className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
-                            YourFriends
+                            YourFriendds
                         </span>
                         <div className="w-[100px]">
                             <RotatingText
