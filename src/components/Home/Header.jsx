@@ -15,7 +15,7 @@ export default function App() {
       ]
     },
     {
-      label: "Scoprii di più",
+      label: "Scopri di più",
       bgColor: "#170D27",
       textColor: "#fff",
       links: [
