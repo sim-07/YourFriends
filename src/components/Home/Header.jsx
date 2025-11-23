@@ -6,7 +6,7 @@ import logo from '../../assets/logo.svg';
 export default function App() {
   const items = [
     {
-      label: "Su di noi",
+      label: "Sua di noi",
       bgColor: "#0D0716",
       textColor: "#fff",
       links: [
