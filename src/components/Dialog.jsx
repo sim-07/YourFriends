@@ -31,10 +31,10 @@ const Dialog = ({ openDialog, setOpenDialog, children }) => {
             <div
                 style={{
                     background: "white",
-                    padding: "20px",
+                    padding: "50px",
                     borderRadius: "12px",
                     width: "50vw",
-                    height: '90vh',
+                    height: '70vh',
                     transform: openDialog ? "scale(1)" : "scale(0.4)",
                     opacity: openDialog ? 1 : 0,
                     transition: "transform 0.15s ease-out, opacity 0.15s ease-out",
