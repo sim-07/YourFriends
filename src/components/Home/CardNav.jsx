@@ -1,9 +1,10 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-// use your own icon import if react-icons is not available
 import { GoArrowUpRight } from 'react-icons/go';
 import { useNavigate } from "react-router-dom";
-import './CardNav.css';
+import '../../assets/styles/CardNav.css';
+import Dialog from '../Dialog';
+import Login from '../Login';
 
 
 const CardNav = ({
@@ -22,6 +23,9 @@ const CardNav = ({
   const navRef = useRef(null);
   const cardsRef = useRef([]);
   const tlRef = useRef(null);
+  const [openDialog, setOpenDialog] = useState(false);
+
+
   const navigate = useNavigate();
   const calculateHeight = () => {
     const navEl = navRef.current;
@@ -86,7 +90,6 @@ const CardNav = ({
       tl?.kill();
       tlRef.current = null;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ease, items]);
 
   useLayoutEffect(() => {
@@ -114,7 +117,6 @@ const CardNav = ({
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isExpanded]);
 
   const toggleMenu = () => {
@@ -136,65 +138,69 @@ const CardNav = ({
   };
 
   return (
-    <div className={`card-nav-container ${className}`}>
-      <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{ backgroundColor: baseColor }}>
-        <div className="card-nav-top">
-          <div
-            className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''}`}
-            onClick={toggleMenu}
-            role="button"
-            aria-label={isExpanded ? 'Close menu' : 'Open menu'}
-            tabIndex={0}
-            style={{ color: menuColor || '#000' }}
-          >
-            <div className="hamburger-line" />
-            <div className="hamburger-line" />
-          </div>
+    <>
+      <Dialog openDialog={openDialog} setOpenDialog={setOpenDialog}>
+        <Login />
+      </Dialog>
 
-          <div className="logo-container">
-            <img
-              src={logo}
-              className="me-3"
-              alt={logoAlt}
-              style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
-            />
-          </div>
-          
-
-          <button
-            type="button"
-            className="card-nav-cta-button"
-            onClick={() => navigate('/Login')}
-            style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
-          >
-
-            Accedi/Registrati
-
-          </button>
-        </div>
-
-        <div className="card-nav-content" aria-hidden={!isExpanded}>
-          {(items || []).slice(0, 3).map((item, idx) => (
+      <div className={`card-nav-container ${className}`}>
+        <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{ backgroundColor: baseColor }}>
+          <div className="card-nav-top">
             <div
-              key={`${item.label}-${idx}`}
-              className="nav-card"
-              ref={setCardRef(idx)}
-              style={{ backgroundColor: item.bgColor, color: item.textColor }}
+              className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''}`}
+              onClick={toggleMenu}
+              role="button"
+              aria-label={isExpanded ? 'Close menu' : 'Open menu'}
+              tabIndex={0}
+              style={{ color: menuColor || '#000' }}
             >
-              <div className="nav-card-label">{item.label}</div>
-              <div className="nav-card-links">
-                {item.links?.map((lnk, i) => (
-                  <a key={`${lnk.label}-${i}`} className="nav-card-link" href={lnk.href} aria-label={lnk.ariaLabel}>
-                    <GoArrowUpRight className="nav-card-link-icon" aria-hidden="true" />
-                    {lnk.label}
-                  </a>
-                ))}
-              </div>
+              <div className="hamburger-line" />
+              <div className="hamburger-line" />
             </div>
-          ))}
-        </div>
-      </nav>
-    </div>
+
+            <div className="logo-container">
+              <img
+                src={logo}
+                className="me-3"
+                alt={logoAlt}
+                style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
+              />
+            </div>
+
+
+            <button
+              type="button"
+              className="card-nav-cta-button"
+              //onClick={() => navigate('/Login')}
+              style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+            >
+              Accedi
+            </button>
+          </div>
+
+          <div className="card-nav-content" aria-hidden={!isExpanded}>
+            {(items || []).slice(0, 3).map((item, idx) => (
+              <div
+                key={`${item.label}-${idx}`}
+                className="nav-card"
+                ref={setCardRef(idx)}
+                style={{ backgroundColor: item.bgColor, color: item.textColor }}
+              >
+                <div className="nav-card-label">{item.label}</div>
+                <div className="nav-card-links">
+                  {item.links?.map((lnk, i) => (
+                    <a key={`${lnk.label}-${i}`} className="nav-card-link" href={lnk.href} aria-label={lnk.ariaLabel}>
+                      <GoArrowUpRight className="nav-card-link-icon" aria-hidden="true" />
+                      {lnk.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </nav>
+      </div>
+    </>
   );
 };
 

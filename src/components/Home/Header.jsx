@@ -1,5 +1,5 @@
 import React from 'react';
-import CardNav from '../CardNav';
+import CardNav from './CardNav';
 import HeroSection from './HeroSection.jsx';
 import logo from '../../assets/logo.svg';
 

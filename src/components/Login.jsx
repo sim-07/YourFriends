@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function LoginPage() {
+function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = async (e) => {
+  /*const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
@@ -28,7 +28,7 @@ function LoginPage() {
       console.error("Errore nel login:", error);
       alert("Errore nel login");
     }
-  };
+  };*/
 
   return (
     <section className='flex justify-center items-center min-h-screen bg-gray-100 relative'>
@@ -85,4 +85,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default Login;
