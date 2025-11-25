@@ -31,7 +31,7 @@ function Login() {
   };
 
   return (
-    <section className='flex justify-center items-center min-h-screen bg-gray-100 relative'>
+    <section className='flex justify-center items-center p-4 bg-gray-100 relative mt-20'>
       <Link to="/" className="absolute top-4 left-4 text-4xl text-blue-500 hover:text-blue-700">
         &larr;
       </Link>

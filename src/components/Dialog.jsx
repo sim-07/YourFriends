@@ -23,7 +23,8 @@ const Dialog = ({ openDialog, setOpenDialog, children }) => {
                 justifyContent: "center",
                 alignItems: "center",
                 transition: "opacity 0.15s",
-                opacity: openDialog ? 1 : 0
+                opacity: openDialog ? 1 : 0,
+                zIndex: 1000
             }}
             onClick={() => setOpenDialog(false)}
         >
@@ -32,7 +33,8 @@ const Dialog = ({ openDialog, setOpenDialog, children }) => {
                     background: "white",
                     padding: "20px",
                     borderRadius: "12px",
-                    width: "300px",
+                    width: "50vw",
+                    height: '90vh',
                     transform: openDialog ? "scale(1)" : "scale(0.4)",
                     opacity: openDialog ? 1 : 0,
                     transition: "transform 0.15s ease-out, opacity 0.15s ease-out",
