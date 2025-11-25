@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Dialog = ({ openDialog, setOpenDialog, children }) => {
+const Dialog = ({ visibleDialog, openDialog, setOpenDialog, children }) => {
     const [visible, setVisible] = useState(openDialog);
 
     useEffect(() => {
@@ -13,34 +13,32 @@ const Dialog = ({ openDialog, setOpenDialog, children }) => {
 
     if (!visible) return null;
 
+    const overlayStyle = {
+        position: "fixed",
+        inset: 0,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 1000,
+        background: "rgba(0, 0, 0, 0.4)",
+        transition: "opacity 0.3s",
+        opacity: visibleDialog ? (openDialog ? 1 : 0) : 1,
+    };
+
+    const containerStyle = {
+        background: visibleDialog ? "white" : "transparent",
+        padding: "50px",
+        borderRadius: "12px",
+        width: "50vw",
+        height: "70vh",
+        transform: openDialog ? "scale(1)" : "scale(0.4)",
+        opacity: openDialog ? 1 : 0,
+        transition: "transform 0.15s ease-out, opacity 0.15s ease-out",
+    };
+
     return (
-        <div
-            style={{
-                position: "fixed",
-                inset: 0,
-                background: "rgba(0,0,0,0.4)",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                transition: "opacity 0.15s",
-                opacity: openDialog ? 1 : 0,
-                zIndex: 1000
-            }}
-            onClick={() => setOpenDialog(false)}
-        >
-            <div
-                style={{
-                    background: "white",
-                    padding: "50px",
-                    borderRadius: "12px",
-                    width: "50vw",
-                    height: '70vh',
-                    transform: openDialog ? "scale(1)" : "scale(0.4)",
-                    opacity: openDialog ? 1 : 0,
-                    transition: "transform 0.15s ease-out, opacity 0.15s ease-out",
-                }}
-                onClick={(e) => e.stopPropagation()}
-            >
+        <div style={overlayStyle} onClick={() => setOpenDialog(false)}>
+            <div style={containerStyle} onClick={(e) => e.stopPropagation()}>
                 {children}
             </div>
         </div>

@@ -4,7 +4,7 @@ import { GoArrowUpRight } from 'react-icons/go';
 import { useNavigate } from "react-router-dom";
 import '../../assets/styles/CardNav.css';
 import Dialog from '../Dialog';
-import Login from '../Login';
+import SignIn from '../Login/SignIn';
 
 
 const CardNav = ({
@@ -139,8 +139,8 @@ const CardNav = ({
 
   return (
     <>
-      <Dialog openDialog={openDialog} setOpenDialog={setOpenDialog}>
-        <Login />
+      <Dialog visibleDialog={false} openDialog={openDialog} setOpenDialog={setOpenDialog}>
+        <SignIn />
       </Dialog>
 
       <div className={`card-nav-container ${className}`}>

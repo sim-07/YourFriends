@@ -5,7 +5,7 @@ const HeroSection = () => {
     return (
         <div>
             <div
-                className="relative w-full min-h-[99vh] mb-0 p-0 bg-cover bg-center flex flex-col items-center justify-center text-center text-black"
+                className="relative w-full min-h-[100vh] mb-0 p-0 bg-cover bg-center flex flex-col items-center justify-center text-center text-black"
                 style={{ backgroundImage: "url('/images/yourfriends-slider_slide-3.jpg')" }}
             >
                 <div className="max-w-4xl bg-white/25 backdrop-blur-xl rounded-xl p-8 border border-white/20">                    

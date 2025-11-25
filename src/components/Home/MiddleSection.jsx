@@ -20,7 +20,7 @@ const HeroSection = () => {
     ]
 
     return (
-        <div className="mt-10 min-h-screen flex flex-col items-center justify-center text-center px-6 py-12 text-black">
+        <div className="mt-4 min-h-screen flex flex-col items-center justify-center text-center px-6 py-12 text-black">
 
             <div className="w-[100vw] flex justify-center items-center">
                 {/* Container delle card */}
@@ -36,8 +36,8 @@ const HeroSection = () => {
                             initialOpacity={0.2}
                             animateOpacity
                             scale={1.02}
-                            threshold={0.2}
-                            delay={0.2 + index * 0.2}
+                            threshold={0.05}
+                            delay={0.05 + index * 0.05}
                         >
                             <SpotlightCard
                                 className="flex-1 min-w-[280px] max-w-[380px] h-[480px] group"
