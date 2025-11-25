@@ -42,7 +42,7 @@ export default function App() {
         logo={logo}
         logoAlt="Company Logo"
         items={items}
-        baseColor="transparent"
+        baseColor="white"
         menuColor="#000"
         buttonBgColor="#5227ff"
         buttonTextColor="#fff"

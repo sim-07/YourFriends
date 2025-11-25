@@ -152,7 +152,12 @@ const CardNav = ({
           </div>
 
           <div className="logo-container">
-            <img src={logo} class="h-8 me-3" alt="YourFriends Logo" />
+            <img
+              src={logo}
+              className="me-3"
+              alt={logoAlt}
+              style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
+            />
           </div>
           
 
