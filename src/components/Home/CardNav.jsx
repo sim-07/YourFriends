@@ -171,7 +171,7 @@ const CardNav = ({
             <button
               type="button"
               className="card-nav-cta-button"
-              //onClick={() => navigate('/Login')}
+              onClick={() => setOpenDialog(true)}
               style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
             >
               Accedi
